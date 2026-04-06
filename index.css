@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Safe Steps - Playful & Hopeful Design System
+   A warm, encouraging design for parents of disabled children
+   All colors in HSL format */
+
+@layer base {
+  :root {
+    /* Primary - Warm Coral/Orange for hope and energy */
+    --primary: 24 95% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Soft Teal for calm and trust */
+    --secondary: 174 58% 45%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Background - Warm cream */
+    --background: 45 40% 97%;
+    --foreground: 220 25% 20%;
+    
+    /* Card - Pure white with warmth */
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 20%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 20%;
+    
+    /* Muted - Soft lavender */
+    --muted: 260 30% 95%;
+    --muted-foreground: 220 15% 45%;
+    
+    /* Accent - Sunny Yellow */
+    --accent: 45 95% 65%;
+    --accent-foreground: 220 25% 20%;
+    
+    /* Destructive */
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Success - Fresh Green */
+    --success: 145 65% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning - Warm Amber */
+    --warning: 38 92% 55%;
+    --warning-foreground: 220 25% 20%;
+    
+    /* Info - Sky Blue */
+    --info: 200 85% 55%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 24 95% 60%;
+    
+    --radius: 1rem;
+    
+    /* Disability-specific colors */
+    --blindness: 280 65% 55%;
+    --blindness-light: 280 65% 95%;
+    --deafness: 200 85% 50%;
+    --deafness-light: 200 85% 95%;
+    --dyslexia: 145 65% 45%;
+    --dyslexia-light: 145 65% 95%;
+    --speech: 24 95% 60%;
+    --speech-light: 24 95% 95%;
+    
+    /* Sidebar */
+    --sidebar-background: 45 40% 97%;
+    --sidebar-foreground: 220 25% 20%;
+    --sidebar-primary: 24 95% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 30% 95%;
+    --sidebar-accent-foreground: 220 25% 20%;
+    --sidebar-border: 220 20% 88%;
+    --sidebar-ring: 24 95% 60%;
+  }
+
+  .dark {
+    --primary: 24 90% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 174 50% 40%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --background: 220 25% 10%;
+    --foreground: 45 30% 95%;
+    
+    --card: 220 25% 14%;
+    --card-foreground: 45 30% 95%;
+    
+    --popover: 220 25% 14%;
+    --popover-foreground: 45 30% 95%;
+    
+    --muted: 220 25% 18%;
+    --muted-foreground: 220 15% 65%;
+    
+    --accent: 45 85% 50%;
+    --accent-foreground: 220 25% 10%;
+    
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 145 55% 40%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 85% 50%;
+    --warning-foreground: 220 25% 10%;
+    
+    --info: 200 75% 45%;
+    --info-foreground: 0 0% 100%;
+    
+    --border: 220 25% 22%;
+    --input: 220 25% 22%;
+    --ring: 24 90% 55%;
+    
+    --blindness: 280 55% 50%;
+    --blindness-light: 280 30% 20%;
+    --deafness: 200 70% 45%;
+    --deafness-light: 200 30% 20%;
+    --dyslexia: 145 55% 40%;
+    --dyslexia-light: 145 30% 20%;
+    --speech: 24 85% 50%;
+    --speech-light: 24 30% 20%;
+    
+    --sidebar-background: 220 25% 12%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 24 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 25% 18%;
+    --sidebar-accent-foreground: 45 30% 95%;
+    --sidebar-border: 220 25% 22%;
+    --sidebar-ring: 24 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.1) 0%,
+      hsl(var(--accent) / 0.1) 50%,
+      hsl(var(--secondary) / 0.1) 100%
+    );
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(24 95% 70%) 100%
+    );
+  }
+  
+  .gradient-card {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--muted) / 0.5) 100%
+    );
+  }
+  
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--secondary)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 4px 20px -4px hsl(var(--foreground) / 0.1);
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 30px -5px hsl(var(--primary) / 0.3);
+  }
+}
